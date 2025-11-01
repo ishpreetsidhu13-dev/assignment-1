@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Pizza Place</h1>
+        <p>Order your delicious pizza here!</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="3" cols="30"></textarea><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Pizza Order</legend>
+                <label for="num_pizzas">Number of Pizzas:</label>
+                <input type="number" id="num_pizzas" name="num_pizzas" min="1" max="10" value="1"><br><br>
+
+                <label for="size">Size:</label>
+                <select id="size" name="size">
+                    <option value="small">Small (6 slices)</option>
+                    <option value="medium">Medium (8 slices)</option>
+                    <option value="large">Large (10 slices)</option>
+                    <option value="xl">Extra Large (12 slices)</option>
+                </select><br><br>
+
+                <label>Shape:</label><br>
+                <input type="radio" id="round" name="shape" value="round" checked>
+                <label for="round">Round</label><br>
+                <input type="radio" id="square" name="shape" value="square">
+                <label for="square">Square</label><br><br>
+
+                <label>Crust Type:</label><br>
+                <input type="radio" id="thin" name="crust" value="thin" checked>
+                <label for="thin">Thin Crust</label><br>
+                <input type="radio" id="thick" name="crust" value="thick">
+                <label for="thick">Thick Crust</label><br>
+                <input type="radio" id="deep" name="crust" value="deep">
+                <label for="deep">Deep Dish</label><br><br>
+
+                <label>Toppings:</label><br>
+                <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+                <label for="pepperoni">Pepperoni</label><br>
+                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                <label for="mushrooms">Mushrooms</label><br>
+                <input type="checkbox" id="onions" name="toppings" value="onions">
+                <label for="onions">Onions</label><br>
+                <input type="checkbox" id="peppers" name="toppings" value="peppers">
+                <label for="peppers">Bell Peppers</label><br>
+                <input type="checkbox" id="olives" name="toppings" value="olives">
+                <label for="olives">Olives</label><br>
+                <input type="checkbox" id="cheese" name="toppings" value="extra_cheese">
+                <label for="cheese">Extra Cheese</label><br><br>
+
+                <label for="special_instructions">Special Instructions:</label><br>
+                <textarea id="special_instructions" name="special_instructions" rows="4" cols="50"></textarea><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Order Type</legend>
+                <label>Pickup or Delivery:</label><br>
+                <input type="radio" id="pickup" name="order_type" value="pickup" checked>
+                <label for="pickup">Pickup</label><br>
+                <input type="radio" id="delivery" name="order_type" value="delivery">
+                <label for="delivery">Delivery</label><br>
+                <input type="radio" id="dine_in" name="order_type" value="dine_in">
+                <label for="dine_in">Dine In</label><br><br>
+
+                <label for="pickup_time">Preferred Pickup/Delivery Time:</label>
+                <input type="datetime-local" id="pickup_time" name="pickup_time"><br><br>
+            </fieldset>
+
+            <button type="submit">Submit Order</button>
+            <button type="reset">Reset Form</button>
+        </form>
+
+        <p>
+            <img src="pizza.jpg" alt="A delicious pizza with various toppings">
+            Enjoy your pizza!
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Our Pizza Place. All rights reserved.</p>
+    </footer>
+</body>
+</html>
