@@ -3,102 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Order Form</title>
+    <title>My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Creative Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #ff6b6b, #feca57) !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .navbar-brand, .nav-link {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        section:not(.hero) {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section:not(.hero):hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #667eea;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            border-radius: 2px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: none;
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .post-card h3 {
+            color: #667eea;
+            transition: color 0.3s ease;
+        }
+
+        .post-card h3:hover {
+            color: #ff6b6b;
+        }
+
+        .post-card .text-muted {
+            color: #feca57 !important;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px 20px 0 0;
+            margin: 20px;
+            padding: 30px;
+        }
+
+        .site-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            margin: 20px;
+            border-radius: 0 0 20px 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .site-header a {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stats li {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stats li:hover {
+            transform: scale(1.05);
+        }
+
+        .stats li strong {
+            color: #feca57;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Pizza Place</h1>
-        <p>Order your delicious pizza here!</p>
+
+    <header class="site-header text-center">
+        <h1><a href="index.html" class="text-white text-decoration-none fs-1">My Blog</a></h1>
+        <p class="text-light">Learning Web Development Journey</p>
     </header>
 
-    <main>
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Customer Information</legend>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active mx-2" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+    <main class="container my-4">
 
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required><br><br>
+        <section class="hero p-5 mb-4">
+            <h2 class="display-4">Hey, I'm Learning Web Dev!</h2>
+            <p class="lead">Welcome to my blog. It's been a wild ride!</p>
+        </section>
 
-                <label for="address">Delivery Address:</label>
-                <textarea id="address" name="address" rows="3" cols="30"></textarea><br><br>
-            </fieldset>
+        <section class="p-4 mb-4">
+            <h2 class="text-center mb-4">How I Started</h2>
+            <p>A few months ago I didn't even know what CSS was. Now I've built some real projects!</p>
+            <p>Every mistake teaches me something new.</p>
+        </section>
 
-            <fieldset>
-                <legend>Pizza Order</legend>
-                <label for="num_pizzas">Number of Pizzas:</label>
-                <input type="number" id="num_pizzas" name="num_pizzas" min="1" max="10" value="1"><br><br>
+        <section class="p-4 mb-4">
+            <h2 class="text-center mb-4">What's Next</h2>
+            <ul class="stats list-unstyled">
+                <li><strong>JavaScript</strong> - Basics to learn</li>
+                <li class="mt-3"><strong>Layouts</strong> - More complex designs</li>
+                <li class="mt-3"><strong>WordPress</strong> - Theme development</li>
+            </ul>
+        </section>
 
-                <label for="size">Size:</label>
-                <select id="size" name="size">
-                    <option value="small">Small (6 slices)</option>
-                    <option value="medium">Medium (8 slices)</option>
-                    <option value="large">Large (10 slices)</option>
-                    <option value="xl">Extra Large (12 slices)</option>
-                </select><br><br>
+        <section class="p-4">
+            <h2 class="text-center mb-4">Latest Posts</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <article class="post-card p-4 h-100">
+                        <h3><a href="#">My First Website</a></h3>
+                        <p class="text-muted">in 2025</p>
+                        <p>I finally built my first website from scratch. It took weeks of learning HTML and CSS...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="post-card p-4 h-100">
+                        <h3><a href="#">Why Learning Code is Hard</a></h3>
+                        <p class="text-muted">in 2026</p>
+                        <p>Everyone says you can learn online for free. What they don't tell you is how frustrating it can be...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="post-card p-4 h-100">
+                        <h3><a href="#">My Goals for 2026</a></h3>
+                        <p class="text-muted">in 2025</p>
+                        <p>As the year ends, I'm thinking about what I want to accomplish next year...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <label>Shape:</label><br>
-                <input type="radio" id="round" name="shape" value="round" checked>
-                <label for="round">Round</label><br>
-                <input type="radio" id="square" name="shape" value="square">
-                <label for="square">Square</label><br><br>
-
-                <label>Crust Type:</label><br>
-                <input type="radio" id="thin" name="crust" value="thin" checked>
-                <label for="thin">Thin Crust</label><br>
-                <input type="radio" id="thick" name="crust" value="thick">
-                <label for="thick">Thick Crust</label><br>
-                <input type="radio" id="deep" name="crust" value="deep">
-                <label for="deep">Deep Dish</label><br><br>
-
-                <label>Toppings:</label><br>
-                <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-                <label for="pepperoni">Pepperoni</label><br>
-                <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
-                <label for="mushrooms">Mushrooms</label><br>
-                <input type="checkbox" id="onions" name="toppings" value="onions">
-                <label for="onions">Onions</label><br>
-                <input type="checkbox" id="peppers" name="toppings" value="peppers">
-                <label for="peppers">Bell Peppers</label><br>
-                <input type="checkbox" id="olives" name="toppings" value="olives">
-                <label for="olives">Olives</label><br>
-                <input type="checkbox" id="cheese" name="toppings" value="extra_cheese">
-                <label for="cheese">Extra Cheese</label><br><br>
-
-                <label for="special_instructions">Special Instructions:</label><br>
-                <textarea id="special_instructions" name="special_instructions" rows="4" cols="50"></textarea><br><br>
-            </fieldset>
-
-            <fieldset>
-                <legend>Order Type</legend>
-                <label>Pickup or Delivery:</label><br>
-                <input type="radio" id="pickup" name="order_type" value="pickup" checked>
-                <label for="pickup">Pickup</label><br>
-                <input type="radio" id="delivery" name="order_type" value="delivery">
-                <label for="delivery">Delivery</label><br>
-                <input type="radio" id="dine_in" name="order_type" value="dine_in">
-                <label for="dine_in">Dine In</label><br><br>
-
-                <label for="pickup_time">Preferred Pickup/Delivery Time:</label>
-                <input type="datetime-local" id="pickup_time" name="pickup_time"><br><br>
-            </fieldset>
-
-            <button type="submit">Submit Order</button>
-            <button type="reset">Reset Form</button>
-        </form>
-
-        <p>
-            <img src="pizza.png" alt="A delicious pizza with various toppings">
-            Enjoy your pizza!
-        </p>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Our Pizza Place. All rights reserved.</p>
+    <footer class="text-white text-center">
+        <p class="mb-0">&copy; 2024 My Blog. Built with WordPress!</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
